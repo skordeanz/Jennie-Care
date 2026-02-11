@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennie's Self-Care Companion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>💜 Self-Care Companion</h1>
+            <p class="subtitle">Taking care of you, every day</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="nav-btn active" data-section="home">Home</button>
+            <button class="nav-btn" data-section="tracker">Period Tracker</button>
+            <button class="nav-btn" data-section="health">Health Tips</button>
+            <button class="nav-btn" data-section="mood">Mood Tracker</button>
+            <button class="nav-btn" data-section="checklist">Care Checklist</button>
+            <button class="nav-btn" data-section="messages">Support</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <h2>Welcome to Your Personal Care Space</h2>
+                <div class="welcome-content">
+                    <p>Hi Jennie! 💜</p>
+                    <p>I created this space because I care about you and want to support you during your period. This companion is here to help you:</p>
+                    <ul class="list-items">
+                        <li>✨ Track your cycle and understand your body</li>
+                        <li>💊 Get relief tips and health advice</li>
+                        <li>🎯 Check off daily self-care tasks</li>
+                        <li>💭 Track your mood and emotions</li>
+                        <li>💪 Remember that you're stronger than you think</li>
+                    </ul>
+                    <p class="highlight-text">Everything you enter stays private and saved on your device. This is your safe space.</p>
+                    <button class="btn btn-primary" onclick="switchSection('tracker')">Let's Get Started →</button>
+                </div>
+            </section>
+
+            <!-- Period Tracker Section -->
+            <section id="tracker" class="section">
+                <h2>Period Tracker</h2>
+                <div class="tracker-setup">
+                    <div class="input-group">
+                        <label for="cycleStart">First day of last period:</label>
+                        <input type="date" id="cycleStart" class="input-field">
+                    </div>
+                    <div class="input-group">
+                        <label for="cycleLength">Cycle length (days):</label>
+                        <input type="number" id="cycleLength" class="input-field" value="28" min="21" max="35">
+                    </div>
+                    <div class="input-group">
+                        <label for="periodLength">Period length (days):</label>
+                        <input type="number" id="periodLength" class="input-field" value="5" min="2" max="10">
+                    </div>
+                    <button class="btn btn-primary" id="saveTrackerBtn">Save Cycle Info</button>
+                </div>
+
+                <div id="trackerInfo" class="tracker-info" style="display: none;">
+                    <div class="cycle-stats">
+                        <div class="stat-card period-days">
+                            <h3>Period Days</h3>
+                            <p id="periodDaysCount">-</p>
+                        </div>
+                        <div class="stat-card fertile-days">
+                            <h3>Fertile Window</h3>
+                            <p id="fertileDaysCount">-</p>
+                        </div>
+                        <div class="stat-card ovulation-day">
+                            <h3>Ovulation</h3>
+                            <p id="ovulationDay">-</p>
+                        </div>
+                        <div class="stat-card next-period">
+                            <h3>Next Period</h3>
+                            <p id="nextPeriod">-</p>
+                        </div>
+                    </div>
+
+                    <div class="calendar-section">
+                        <h3>Your Cycle Calendar (Next 3 months)</h3>
+                        <div id="calendarContainer" class="calendar-container"></div>
+                    </div>
+
+                    <div class="cycle-legend">
+                        <div class="legend-item">
+                            <div class="legend-color period"></div>
+                            <span>Period</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color fertile"></div>
+                            <span>Fertile Window</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color ovulation"></div>
+                            <span>Ovulation</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color normal"></div>
+                            <span>Rest Days</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Health Tips Section -->
+            <section id="health" class="section">
+                <h2>Health Tips & Relief Remedies</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>🔥 Heat Therapy</h3>
+                        <p>Use a heating pad on your lower abdomen for 15-20 minutes. Heat relaxes muscles and reduces pain naturally.</p>
+                        <ul>
+                            <li>Heating pad on low-medium heat</li>
+                            <li>Warm compress on lower back</li>
+                            <li>Take a warm bath or shower</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <h3>💧 Stay Hydrated</h3>
+                        <p>Drink plenty of water—it helps reduce bloating and supports your body during this time.</p>
+                        <ul>
+                            <li>Drink 8-10 glasses of water daily</li>
+                            <li>Herbal teas (ginger, chamomile)</li>
+                            <li>Avoid excessive caffeine/sugar</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <h3>🧘 Gentle Movement</h3>
+                        <p>Light exercise can actually help ease cramps. Gentle yoga, walking, or stretching are perfect.</p>
+                        <ul>
+                            <li>10-minute gentle yoga routine</li>
+                            <li>Slow, mindful walks</li>
+                            <li>Child's pose stretch</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <h3>🍎 Nutrition Boost</h3>
+                        <p>Eat foods rich in iron, magnesium, and calcium to support your body.</p>
+                        <ul>
+                            <li>Dark leafy greens (spinach, kale)</li>
+                            <li>Dark chocolate (magnesium!)</li>
+                            <li>Nuts, seeds, whole grains</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <h3>😴 Rest & Sleep</h3>
+                        <p>Your body needs extra rest during your period. Listen to it and get good sleep.</p>
+                        <ul>
+                            <li>Aim for 7-9 hours of sleep</li>
+                            <li>Take naps if needed</li>
+                            <li>Create a cozy sleep space</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-card">
+                        <h3>💆 Self-Massage</h3>
+                        <p>Gently massage your abdomen and lower back in circular motions to ease tension.</p>
+                        <ul>
+                            <li>Use gentle circular motions</li>
+                            <li>Try warm oils for extra comfort</li>
+                            <li>5-10 minutes can make a difference</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mood Tracker Section -->
+            <section id="mood" class="section">
+                <h2>Mood Tracker</h2>
+                <p class="section-subtitle">How are you feeling today?</p>
+
+                <div class="mood-tracker">
+                    <div class="mood-selector">
+                        <button class="mood-btn" data-mood="5" title="Amazing">😄</button>
+                        <button class="mood-btn" data-mood="4" title="Good">🙂</button>
+                        <button class="mood-btn" data-mood="3" title="Okay">😐</button>
+                        <button class="mood-btn" data-mood="2" title="Not great">😕</button>
+                        <button class="mood-btn" data-mood="1" title="Struggling">😢</button>
+                    </div>
+                    <button class="btn btn-primary" id="recordMoodBtn" style="display: none;">Record Mood</button>
+                </div>
+
+                <div class="mood-notes">
+                    <label for="moodNotes">Add a note (optional):</label>
+                    <textarea id="moodNotes" class="input-field" placeholder="What's on your mind?"></textarea>
+                </div>
+
+                <div class="mood-history">
+                    <h3>Your Mood This Cycle</h3>
+                    <canvas id="moodChart" width="400" height="150"></canvas>
+                    <div id="moodEntries" class="mood-entries"></div>
+                </div>
+            </section>
+
+            <!-- Care Checklist Section -->
+            <section id="checklist" class="section">
+                <h2>Daily Self-Care Checklist</h2>
+                <p class="section-subtitle">Check off what you've done today 💜</p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="hydrate" class="checklist-input">
+                        <label for="hydrate">💧 Drink enough water (8 glasses)</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="rest" class="checklist-input">
+                        <label for="rest">😴 Get enough rest/sleep</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="heat" class="checklist-input">
+                        <label for="heat">🔥 Use heat therapy if needed</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="nutrition" class="checklist-input">
+                        <label for="nutrition">🍎 Eat nutritious food</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="movement" class="checklist-input">
+                        <label for="movement">🧘 Do light movement/stretching</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="medicine" class="checklist-input">
+                        <label for="medicine">💊 Take pain relief if needed</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="calm" class="checklist-input">
+                        <label for="calm">🧘‍♀️ Do something calming for 10 min</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="kind" class="checklist-input">
+                        <label for="kind">💭 Say something kind to yourself</label>
+                    </div>
+                </div>
+
+                <div id="checklistProgress" class="progress-section" style="display: none;">
+                    <h3>Today's Progress</h3>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressText"></p>
+                </div>
+            </section>
+
+            <!-- Support Messages Section -->
+            <section id="messages" class="section">
+                <h2>You're Not Alone 💜</h2>
+                
+                <div class="message-of-day">
+                    <h3>Today's Message for You</h3>
+                    <div class="message-box">
+                        <p id="dailyMessage"></p>
+                    </div>
+                    <button class="btn btn-secondary" id="newMessageBtn">Another message?</button>
+                </div>
+
+                <div class="affirmations">
+                    <h3>Remember These Truths</h3>
+                    <div class="affirmation-list">
+                        <div class="affirmation">This is temporary and you will feel better.</div>
+                        <div class="affirmation">You are strong and capable.</div>
+                        <div class="affirmation">It's okay to rest and take care of yourself.</div>
+                        <div class="affirmation">Your body is doing amazing things.</div>
+                        <div class="affirmation">You deserve compassion—especially from yourself.</div>
+                        <div class="affirmation">Reaching out for support is a sign of strength.</div>
+                        <div class="affirmation">Every day gets a little easier.</div>
+                        <div class="affirmation">You are worthy of care and kindness.</div>
+                    </div>
+                </div>
+
+                <div class="personal-space">
+                    <h3>Your Personal Notes</h3>
+                    <textarea id="personalNotes" class="input-field" placeholder="Write anything... thoughts, feelings, reminders for next time..."></textarea>
+                    <button class="btn btn-primary" id="saveNotesBtn">Save Notes</button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with 💜 by someone who cares</p>
+            <p class="footer-note">All your data is saved locally on your device. It never leaves your computer.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

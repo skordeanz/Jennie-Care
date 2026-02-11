@@ -1,0 +1,944 @@
+/* ============================================
+   PERIOD CARE COMPANION - STYLES
+   Warm, Caring, Supportive Design
+   ============================================ */
+
+:root {
+    /* Color Palette */
+    --primary: #D4618B;      /* Warm pink */
+    --secondary: #E6D7F0;    /* Soft lavender */
+    --accent: #FFB3D9;       /* Light pink */
+    --warm-bg: #FFF8F3;      /* Cream */
+    --dark-text: #5A4A6E;    /* Deep purple */
+    --light-text: #8B7B9F;   /* Light purple */
+    --success: #B4D4A8;       /* Soft green */
+    --warning: #F5D5A8;       /* Soft orange */
+    --error: #E8A8A8;         /* Soft red */
+    
+    /* Functional Colors for Tracker */
+    --period-color: #E8A8A8;  /* Period days */
+    --fertile-color: #F5D5A8; /* Fertile window */
+    --ovulation-color: #D4618B; /* Ovulation */
+    --normal-color: #E6D7F0;  /* Rest days */
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Typography */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-sm: 12px;
+    --font-size-base: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(212, 97, 139, 0.1);
+    --shadow-md: 0 4px 8px rgba(212, 97, 139, 0.15);
+    --shadow-lg: 0 8px 16px rgba(212, 97, 139, 0.2);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--warm-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    font-size: var(--font-size-base);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.header h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: var(--font-size-lg);
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.nav-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-btn {
+    flex: 1;
+    min-width: 100px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: var(--light-text);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--secondary);
+    color: var(--dark-text);
+}
+
+.nav-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ============================================
+   MAIN CONTENT & SECTIONS
+   ============================================ */
+
+.main-content {
+    min-height: 60vh;
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section h2 {
+    font-size: var(--font-size-xl);
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--light-text);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   HOME SECTION
+   ============================================ */
+
+.welcome-content {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    line-height: 1.8;
+}
+
+.welcome-content p {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.welcome-content p:first-child {
+    font-size: var(--font-size-xl);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.list-items {
+    list-style: none;
+    margin: var(--spacing-lg) 0;
+}
+
+.list-items li {
+    padding: var(--spacing-md) 0;
+    padding-left: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+    position: relative;
+}
+
+.list-items li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.highlight-text {
+    background: var(--accent);
+    padding: var(--spacing-lg);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-lg) 0;
+    font-style: italic;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: #C04478;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--dark-text);
+}
+
+.btn-secondary:hover {
+    background-color: #D5C4E0;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+
+.input-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+.input-field {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--dark-text);
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(212, 97, 139, 0.1);
+}
+
+/* ============================================
+   PERIOD TRACKER SECTION
+   ============================================ */
+
+.tracker-setup {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.tracker-setup .btn {
+    width: 100%;
+    margin-top: var(--spacing-md);
+}
+
+.tracker-info {
+    animation: fadeIn 0.5s ease;
+}
+
+.cycle-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card h3 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.95;
+}
+
+.stat-card p {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+.stat-card.period-days {
+    background: linear-gradient(135deg, #E8A8A8 0%, #E8A8A8 100%);
+}
+
+.stat-card.fertile-days {
+    background: linear-gradient(135deg, #F5D5A8 0%, #F5C88A 100%);
+}
+
+.stat-card.ovulation-day {
+    background: linear-gradient(135deg, var(--primary) 0%, #C04478 100%);
+}
+
+.stat-card.next-period {
+    background: linear-gradient(135deg, var(--secondary) 0%, #D5C4E0 100%);
+    color: var(--dark-text);
+}
+
+.calendar-section {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.calendar-section h3 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary);
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.calendar {
+    background: white;
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius-mg);
+    padding: var(--spacing-md);
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-xs);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: default;
+    background: var(--warm-bg);
+    color: var(--light-text);
+}
+
+.calendar-day.other-month {
+    opacity: 0.4;
+}
+
+.calendar-day.period {
+    background-color: #E8A8A8;
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-day.fertile {
+    background-color: #F5D5A8;
+    color: var(--dark-text);
+}
+
+.calendar-day.ovulation {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 0 8px rgba(212, 97, 139, 0.3);
+}
+
+.calendar-day.today {
+    border: 2px solid var(--primary);
+    font-weight: 600;
+}
+
+.cycle-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: white;
+    border-radius: var(--radius-lg);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-sm);
+}
+
+.legend-color.period {
+    background-color: #E8A8A8;
+}
+
+.legend-color.fertile {
+    background-color: #F5D5A8;
+}
+
+.legend-color.ovulation {
+    background-color: var(--primary);
+}
+
+.legend-color.normal {
+    background-color: var(--secondary);
+}
+
+/* ============================================
+   HEALTH TIPS SECTION
+   ============================================ */
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.tip-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tip-card h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.tip-card p {
+    margin-bottom: var(--spacing-md);
+    color: var(--light-text);
+}
+
+.tip-card ul {
+    list-style: none;
+    margin: var(--spacing-md) 0 0 0;
+}
+
+.tip-card li {
+    padding: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+    color: var(--dark-text);
+}
+
+.tip-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* ============================================
+   MOOD TRACKER SECTION
+   ============================================ */
+
+.mood-tracker {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.mood-selector {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.mood-btn {
+    font-size: 48px;
+    background: none;
+    border: 2px solid transparent;
+    padding: var(--spacing-md);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.mood-btn:hover {
+    transform: scale(1.2);
+    background-color: var(--secondary);
+    border-color: var(--primary);
+}
+
+.mood-btn.selected {
+    background-color: var(--accent);
+    border-color: var(--primary);
+    transform: scale(1.15);
+}
+
+.mood-notes {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.mood-notes label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.mood-notes textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.mood-history {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.mood-history h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.mood-history canvas {
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+}
+
+.mood-entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.mood-entry {
+    padding: var(--spacing-md);
+    background: var(--secondary);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+}
+
+.mood-entry-date {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.mood-entry-mood {
+    font-size: 24px;
+    margin: var(--spacing-sm) 0;
+}
+
+.mood-entry-note {
+    font-size: var(--font-size-sm);
+    color: var(--light-text);
+    font-style: italic;
+}
+
+/* ============================================
+   CHECKLIST SECTION
+   ============================================ */
+
+.checklist {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--secondary);
+    transition: background-color 0.3s ease;
+}
+
+.checklist-item:last-child {
+    border-bottom: none;
+}
+
+.checklist-item:hover {
+    background-color: var(--warm-bg);
+}
+
+.checklist-input {
+    width: 24px;
+    height: 24px;
+    margin-right: var(--spacing-lg);
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.checklist-item label {
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.checklist-item input:checked + label {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.progress-section {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.progress-section h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background: var(--secondary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    border-radius: var(--radius-md);
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+.progress-text {
+    text-align: center;
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+/* ============================================
+   SUPPORT SECTION
+   ============================================ */
+
+.message-of-day {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.message-of-day h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.message-box {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-box p {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--dark-text);
+    text-align: center;
+    line-height: 1.8;
+}
+
+#newMessageBtn {
+    width: 100%;
+}
+
+.affirmations {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.affirmations h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.affirmation-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.affirmation {
+    background: var(--secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.personal-space {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.personal-space h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.personal-space textarea {
+    min-height: 150px;
+    resize: vertical;
+    margin-bottom: var(--spacing-md);
+}
+
+#saveNotesBtn {
+    width: 100%;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    text-align: center;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    border-top: 2px solid var(--secondary);
+    color: var(--light-text);
+}
+
+.footer p {
+    margin: var(--spacing-sm) 0;
+}
+
+.footer-note {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+    margin-top: var(--spacing-lg);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    .header {
+        padding: var(--spacing-lg);
+    }
+
+    .header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .nav-tabs {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .nav-btn {
+        min-width: unset;
+    }
+
+    .section h2 {
+        font-size: var(--font-size-lg);
+    }
+
+    .cycle-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mood-selector {
+        gap: var(--spacing-md);
+    }
+
+    .mood-btn {
+        font-size: 36px;
+    }
+
+    .affirmation-list {
+        grid-template-columns: 1fr;
+    }
+
+    .mood-entry {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+
+    .header h1 {
+        font-size: var(--font-size-lg);
+    }
+
+    .subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .nav-tabs {
+        padding: var(--spacing-sm);
+    }
+
+    .nav-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+
+    .mood-btn {
+        font-size: 32px;
+        padding: var(--spacing-sm);
+    }
+
+    .tip-card {
+        padding: var(--spacing-md);
+    }
+
+    .checklist-item {
+        padding: var(--spacing-md);
+    }
+
+    .message-box p {
+        font-size: var(--font-size-base);
+    }
+}
